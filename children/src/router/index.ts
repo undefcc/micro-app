@@ -1,7 +1,9 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import './public-path'
+const APP_NAME = require('../package.json').name
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
@@ -15,11 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
   },
-];
+]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(`/${APP_NAME}/`),
   routes,
-});
+})
 
-export default router;
+export default router

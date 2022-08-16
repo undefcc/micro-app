@@ -6,6 +6,7 @@ const apps: any[] = [
     container: '#frame',
     activeRule: '/children',
   },
-];
+]
 
-export default apps;
+export default apps
+
